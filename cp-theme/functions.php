@@ -42,10 +42,11 @@ if ( ! function_exists( 'susty_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		// This theme uses wp_nav_menu() in one location.
+		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
 			array(
-				'main-menu'   => esc_html__( 'MainMenu', 'the-classicpress-theme' ),
+				'main-menu'   => esc_html__( 'Main Menu', 'the-classicpress-theme' ),
+				'footer-menu' => esc_html__( 'Footer Menu', 'the-classicpress-theme' ),
 			)
 		);
 
@@ -180,6 +181,7 @@ function cp_tiny_css( $wp ) {
 }
 add_filter( 'mce_css', 'cp_tiny_css' );
 
+
 /**
  * Add widgets to sidebar and footer
  */
@@ -226,12 +228,14 @@ add_filter( 'the_content', 'cp_remove_empty_p', 20, 1 );
 // Add excerpts to pages
 add_post_type_support( 'page', 'excerpt' );
 
+
 /**
  * Simplify blog detection
  */
 function is_blog() {
 	return ( is_archive() || is_author() || is_category() || is_home() || is_tag() ) && 'post' == get_post_type();
 }
+
 
 /**
  * Set our own version string for the theme's stylesheet
@@ -243,6 +247,7 @@ function cp_susty_override_style_css_version( $version, $type, $handle ) {
 	return cp_susty_get_asset_version();
 }
 add_filter( 'classicpress_asset_version', 'cp_susty_override_style_css_version', 10, 3 );
+
 
 /**
  * Add the page slug as a class to the <body>
