@@ -47,7 +47,7 @@
 			<?php } ?>
 		</div>
 	</footer>
-	<footer id="legal" role="contentinfo">
+	<footer id="legal">
 		<div class="cplegal">
 			<div class="cpcopyright">
 				<p><?php esc_html_e( 'Copyright', 'the-classicpress-theme' ); ?> <?php echo esc_attr( gmdate( 'Y' ) ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>"><?php bloginfo( 'name' ); ?></a></p>
