@@ -15,8 +15,10 @@
 		<div class="classic">
 			<div class="footerleft">
 				<?php if ( is_active_sidebar( 'footer' ) ) { ?>
-					<?php dynamic_sidebar( 'footer' ); ?>
-				<?php } else { ?>	
+					<div class="footer-widgets">
+						<?php dynamic_sidebar( 'footer' ); ?>
+					</div>
+				<?php } else { ?>
 					<a id="footer-logo" href="<?php echo esc_url( home_url() ); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/classicpress-logo-feather-white.svg' ); ?>" alt="<?php esc_attr_e( 'ClassicPress feather logo', 'the-classicpress-theme' ); ?>" width="90"></a>
 					<div class="registration">
 						<p><?php esc_html_e( 'The ClassicPress project is under the direction of The ClassicPress Initiative, a nonprofit organization registered under section 501(c)(3) of the United States IRS code.', 'the-classicpress-theme' ); ?></p>
@@ -52,7 +54,6 @@
 			<div class="cpcopyright">
 				<?php /* translators: 1: year, 2: site title. */ ?>
 				<p><?php printf( esc_html( '&copy; %1$s %2$s.', 'the-classicpress-theme' ), esc_html( gmdate( 'Y' ) ), esc_html( get_bloginfo( 'name' ) ) ); ?> <?php esc_html_e( 'All Rights Reserved.', 'the-classicpress-theme' ); ?></p>
-		
 			</div>
 			<div class="cppolicy">
 				<?php if ( ! empty( get_privacy_policy_url() ) ) { ?>
