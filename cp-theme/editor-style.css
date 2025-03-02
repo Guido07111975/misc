@@ -175,6 +175,17 @@ table {
 }
 
 /* Misc */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #057f99;
+	line-height: 1.25;
+	font-family: "Source Sans Pro";
+	font-weight: 600;
+}
 ul,
 ol {
 	margin-top: 0.5em;
