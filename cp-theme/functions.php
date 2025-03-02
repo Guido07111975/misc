@@ -145,9 +145,7 @@ add_filter(
 	}
 );
 
-/**
- * Remove dashicons in frontend for unauthenticated users
- */
+// Remove dashicons in frontend for unauthenticated users
 function susty_dequeue_dashicons() {
 	if ( ! is_user_logged_in() ) {
 		wp_deregister_style( 'dashicons' );
@@ -176,9 +174,7 @@ function cp_susty_enqueue_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'cp_susty_enqueue_assets' );
 
-/**
- * Add custom stylesheet to TinyMCE editor
- */
+// Add custom stylesheet to TinyMCE editor
 function cp_tiny_css( $wp ) {
 	$wp .= ',' . get_template_directory_uri() . '/css/editor-style.css';
 	return $wp;
@@ -221,18 +217,14 @@ if ( function_exists( 'register_sidebar' ) ) {
 	);
 }
 
-/**
- * Remove empty paragraph tags
- */
+// Remove empty paragraph tags
 function cp_remove_empty_p( $content ) {
 	$content = force_balance_tags( $content );
 	return preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );
 }
 add_filter( 'the_content', 'cp_remove_empty_p', 20, 1 );
 
-/**
- * Add excerpts to pages
- */
+// Add excerpts to pages
 add_post_type_support( 'page', 'excerpt' );
 
 /**
