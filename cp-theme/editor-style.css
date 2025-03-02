@@ -95,7 +95,7 @@ pre {
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
-	border-radius: var(--tcpt-border-radius);
+	border-radius: 4px;
 }
 
 code,
@@ -109,12 +109,11 @@ var {
 	width: 100%;
 	background: #f3f3f3;
 	padding: 0 0.2em;
-	border-radius: var(--tcpt-border-radius);
+	border-radius: 4px;
 }
 .code {
 	padding: 0.5em 0.75em 0.75em 1em;
 	display: inline-block;
-	border-radius: var(--tcpt-border-radius);
 	margin-bottom: 1.4em;
 }
 
